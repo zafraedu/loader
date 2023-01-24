@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <title>loader logo</title>
+    <style>
+      body {
+        background-color: #0a182e;
+      }
+      .container-loader {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      #svg {
+        width: 150px;
+        height: 150px;
+        fill: #08c5f7;
+      }
+      .fuera {
+        stroke: #08c5f7;
+        stroke-width: 4;
+        stroke-dasharray: 1200;
+        stroke-dashoffset: 1200;
+        animation: fuera 2000ms ease-in 1;
+      }
+      .dentro {
+        animation: dentro 3000ms linear 1;
+      }
+      @keyframes fuera {
+        from {
+          fill: #0a182e;
+        }
+        80% {
+          fill: #0a182e;
+          stroke-width: 3;
+        }
+        100% {
+          stroke-dashoffset: 0;
+          stroke-dasharray: 1500;
+          stroke-width: 0;
+        }
+      }
+      @keyframes dentro {
+        from {
+          opacity: 0;
+        }
+        80% {
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-loader">
+      <svg
+        id="svg"
+        xmlns="http://www.w3.org/2000/svg"
+        shape-rendering="geometricPrecision"
+        text-rendering="geometricPrecision"
+        viewBox="0 0 300 300"
+      >
+        <path
+          class="fuera"
+          d="M0 150v150h300l-.2-150.3L300 0H0v150Zm280 0v130H20V20h260v130Z"
+        />
+        <path
+          class="dentro"
+          d="M91.05 70.951v10.5h118v-21h-118v10.5ZM90.95 147.416c0 47.1.1 50.9 2 58.2 4.4 17.2 14.6 27.9 32.7 34.2 7.3 2.6 8.8 2.8 23.8 2.7 14.7 0 16.7-.3 24.2-2.8 15.6-5.1 27.3-15.9 32.4-29.7 2.3-6.4 2.4-6.5 2.7-59.7l.3-53.2h-30l-.3 49.7c-.3 49.3-.4 49.9-2.6 55.5-2.7 6.6-8.1 11.8-14.1 13.6-5 1.6-19.3 1.5-24.4 0-6-1.8-12.1-8.1-14.3-14.8-1.6-4.9-1.8-10.7-2.2-54.8l-.3-49.2h-29.9v50.3Z"
+        />
+      </svg>
+    </div>
+    <!-- <div class="container"><h1>pagina</h1></div> -->
+    <!-- <script>
+      window.onload = () => {
+        const container_loader = document.querySelector(".container-loader");
+        const container = document.querySelector(".container");
+        const body = document.querySelector("body");
+        container.style.display = "none";
+        setTimeout(() => {
+          container.style.display = "flex";
+          body.removeChild(container_loader);
+        }, 4000);
+      };
+    </script> -->
+  </body>
+</html>
